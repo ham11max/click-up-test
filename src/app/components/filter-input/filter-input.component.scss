@@ -1,0 +1,24 @@
+$input-border-color: #ced4da !default;
+$input-border-radius: .25rem !default;
+
+.filter-input {
+  margin-bottom: 1rem;
+
+  &__label {
+    margin-right: .5rem;
+  }
+
+  &__input {
+    font-family: 'Open Sans', sans-serif;
+    padding: .25rem .75rem;
+    font-size: 1rem;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid $input-border-color;
+    appearance: none;
+    border-radius: $input-border-radius;
+  }
+}
+
+

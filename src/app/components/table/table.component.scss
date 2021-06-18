@@ -1,0 +1,55 @@
+$table-border-color: #dee2e6 !default;
+$table-cell-padding: .5rem !default;
+
+
+%sort-icon {
+  font-family: "Material Icons";
+  content: '\f1e3';
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid $table-border-color;
+
+  &__cell {
+    padding: $table-cell-padding;
+    vertical-align: middle;
+    text-align: left;
+    border-bottom: 1px solid $table-border-color;
+
+    &[cdkdrag] {
+      height: auto !important; // to overwrite drag styles
+      cursor: pointer;
+    }
+
+    &--header {
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 2 * $table-cell-padding;
+      border-bottom: 2px solid $table-border-color
+    }
+
+    &--sortable {
+      &.asc::after {
+       @extend %sort-icon;
+      }
+
+      &.desc::after {
+        @extend %sort-icon;
+        transform: rotate(180deg);
+        display: inline-block;
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .05);
+      }
+    }
+
+    &--empty {
+      padding: 2rem;
+      text-align: center;
+    }
+  }
+}
